@@ -45,6 +45,14 @@ Boxes only for Georgian with intact Latin strengthen the missing-glyph/fallback 
 
 ## Next engineering milestone: verify font coverage offline
 
+### Follow-up source search
+
+The [official community 1.0.0.73 announcement](https://nothing.community/en/d/42725-cmf-watch-pro-2-10073-changelog) dates the release announcement to September 2025. The public dump's internal manifest date is August 2024; a later firmware could reuse resources, but this does not establish identical font contents.
+
+An additional lead, [CMF-Ringtone-Tool](https://github.com/tirodz/CMF-Ringtone-Tool/tree/6e867e18f7984df694a2a0e75a08c78c5c06603c), labels a firmware registry entry 1.0.0.73 while directing readers to the same whatotter dump for `original.bin`. Its registry is not independent proof of the dump's version or font coverage. The project explicitly marks BLE installation as untested on hardware. No scripts from it were executed, no code was copied, and no debug-shell operations were attempted. Its GPL-3.0 license would need consideration before code reuse.
+
+Searches for the exact version with firmware download, binary and CDN terms did not locate an authenticated matching image or published checksum. The protocol repository's firmware-request issue still had no comments when checked. This is a search result, not a claim that the image does not exist. The immediate missing research input remains a provenance-backed matching image or font export; the owner does not need to reset or update the watch to continue the notification baseline.
+
 Required input is an authentic stock 1.0.0.73 OTA image or extracted fonts with provenance, ideally the original download URL and a published checksum. Do not trigger an update or intercept private account traffic merely to obtain it. A public older dump may help understand formats but cannot prove this firmware's coverage.
 
 Once a matching artifact is available:
