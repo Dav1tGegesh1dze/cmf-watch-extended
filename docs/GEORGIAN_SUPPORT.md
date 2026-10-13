@@ -11,13 +11,17 @@ Kotlin strings preserve these characters and tests verify UTF-8 round trips. Com
 
 ## Confirmed in this implementation
 
-Localized phone UI strings and Unicode data handling exist. This is a phone-side implementation claim, not confirmation of real-watch glyph support. Hardware validation remains pending in [TESTING.md](TESTING.md).
+Owner observation on 2026-10-13: on Watch Pro 2 firmware 1.0.0.73, `ABC 123` appeared normally and `სალამი` appeared as six empty boxes. This is an owner-reported hardware result, not an automated test or a confirmed cause. Phone Georgian rendering and discovery were also confirmed by the owner. Other hardware acceptance items remain pending.
+
+The [offline font audit](../tools/font_audit/README.md) found no mappings in U+10A0–U+10FF or U+1C90–U+1CBF in 56 distinct parseable font blobs from an older public dump. That dump has not been matched to 1.0.0.73. Character-map inspection does not establish notification-font selection or bitmap rendering. See the [inventory](research/PUBLIC_FONT_AUDIT.json); no firmware binaries are committed.
+
+Localized phone UI strings and Unicode data handling exist. This is a phone-side implementation claim, not confirmation of real-watch glyph support. Remaining hardware checks are listed in [TESTING.md](TESTING.md); owner confirmations are recorded above.
 
 ## Technically plausible, unverified
 
 - **Notification text:** UTF-8 transport could preserve Georgian code points if the documented command uses that encoding and accepts sufficient byte lengths. Correct encoding alone cannot supply missing firmware glyphs. Confirm field encoding, byte limits, truncation boundaries and firmware fonts before sending controlled test messages.
 - **Watchface images:** rasterizing Georgian into an image on the phone could avoid watch text-font limitations for static watchface content. It does not fix dynamic notification text. Rendering format, dimensions, pixel encoding, container structure and safe transfer must be verified first.
-- **Firmware fonts:** the primary research discusses decoded system font resources, but that does not establish Georgian glyph coverage, shaping support or a supported font installation mechanism. Inspect licensed/authorized resources offline for U+10D0–U+10FF and, where needed, U+1C90–U+1CBF; record the exact firmware and font tables. No resources have been extracted here.
+- **Firmware fonts:** an older public dump has now been inspected offline as described above. Matching 1.0.0.73 resources, actual notification-font selection and a supported font installation mechanism remain unverified.
 
 ## May require firmware modification
 

@@ -80,3 +80,9 @@ Once a matching artifact is available:
 This is a documentation-only research change, branched from main. No application behavior changed; no builds or unit tests were run for this change. Source links and firmware metadata were inspected, and `git diff --check` was run. The notification matrix and font inventory remain unexecuted.
 
 The discovery implementation is in [PR #1](https://github.com/Dav1tGegesh1dze/cmf-watch-extended/pull/1), still unmerged at research time. Review that PR first. This branch intentionally does not duplicate its application or CI files. Required CI checks cannot run on this branch until that workflow is present; after PR #1 merges, update this branch from main and let CI run. Do not weaken branch protection or merge automatically.
+
+## Follow-up, 2026-10-13
+
+The owner reports normal `ABC 123` notifications and six empty boxes for `სალამი` on firmware 1.0.0.73. The original matrix above remains unexecuted except for the ASCII control; the owner used a different Georgian sample. The messaging app and expanded-versus-preview view were not specified.
+
+An independently implemented [offline character-map audit](../../tools/font_audit/README.md) now exists, with tests and [older-dump inventory](PUBLIC_FONT_AUDIT.json). It found no Georgian mappings in 56 distinct parseable font blobs. The earlier statement that font inspection is unexecuted is superseded only for that older dump, not for a matching 1.0.0.73 image. Both preceding research/discovery PRs are now merged.

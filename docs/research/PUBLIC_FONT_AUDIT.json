@@ -1,0 +1,425 @@
+{
+  "schema_version": 1,
+  "input_sha256": "a201168bc4dda50d64a248690823470f2c5b5f1012feedbc901644b615598e6b",
+  "input_bytes": 80321216,
+  "scope": "Character maps only. Firmware version, completeness, notification font selection and visual rendering are unverified.",
+  "source_url": "https://raw.githubusercontent.com/whatotter/cmf-watch-firmware/fd8c7081c2e36355fdfc65391878fe57e528c456/bins/extracted.bin",
+  "firmware_version": "unverified; public older dump, not established as 1.0.0.73",
+  "checked_ranges": [
+    "U+10A0–U+10FF",
+    "U+1C90–U+1CBF"
+  ],
+  "parsed_font_candidates": 58,
+  "unique_font_hashes": 56,
+  "rejected_candidates": 45,
+  "fonts_with_ascii_A": 28,
+  "fonts_with_georgian_mapping": 0,
+  "font_inventory": [
+    {
+      "offset": 2576320,
+      "byte_length": 15504,
+      "sha256": "59b7d28c164ea70cfbc3443976c654daa27c29e2cd05710aa88c9419b0eec9dd",
+      "font_size_px": 88,
+      "glyph_count": 17
+    },
+    {
+      "offset": 2591872,
+      "byte_length": 14964,
+      "sha256": "2a7703d36567d96ef3c5013694e55495c85126d58b4b59595dc1e9114392c1ef",
+      "font_size_px": 80,
+      "glyph_count": 17
+    },
+    {
+      "offset": 2606848,
+      "byte_length": 12812,
+      "sha256": "2c0f499a41fdba910784a5d240e8cdd78ec384d90a8d36d24a3a177f6984376f",
+      "font_size_px": 74,
+      "glyph_count": 17
+    },
+    {
+      "offset": 2619712,
+      "byte_length": 8484,
+      "sha256": "cd28c8a95b8e2e2496f62700ffa491c87959e819d4c8839be54c5eddc1da0f6f",
+      "font_size_px": 74,
+      "glyph_count": 17
+    },
+    {
+      "offset": 2628224,
+      "byte_length": 10636,
+      "sha256": "b9969ff0ddd19fa4fa0b6514c96973fea6310127f6bc956b0d49cb24c7379889",
+      "font_size_px": 72,
+      "glyph_count": 17
+    },
+    {
+      "offset": 2638912,
+      "byte_length": 10636,
+      "sha256": "b9969ff0ddd19fa4fa0b6514c96973fea6310127f6bc956b0d49cb24c7379889",
+      "font_size_px": 72,
+      "glyph_count": 17
+    },
+    {
+      "offset": 2649600,
+      "byte_length": 11672,
+      "sha256": "b70c0c3cd0e44dabc94f20e3fc7ec0cecc0ab7cea9079aa91f6f316008a30c06",
+      "font_size_px": 70,
+      "glyph_count": 17
+    },
+    {
+      "offset": 2661312,
+      "byte_length": 8416,
+      "sha256": "6ce6ec5fa477a1fe4436153d3786bc5c9efcfa541f1f50ad206b71e80e301dce",
+      "font_size_px": 64,
+      "glyph_count": 17
+    },
+    {
+      "offset": 2669760,
+      "byte_length": 8012,
+      "sha256": "33c3386824fed9fb3de5d81c34ea080b6ff54a37146eae6a80e42e3e06b17229",
+      "font_size_px": 58,
+      "glyph_count": 17
+    },
+    {
+      "offset": 2677824,
+      "byte_length": 6612,
+      "sha256": "d199cc06c617efca6bb225a44c28b8d990712e74c66fbc1e05fe3b44dadd6a4d",
+      "font_size_px": 56,
+      "glyph_count": 17
+    },
+    {
+      "offset": 2684480,
+      "byte_length": 6612,
+      "sha256": "d199cc06c617efca6bb225a44c28b8d990712e74c66fbc1e05fe3b44dadd6a4d",
+      "font_size_px": 56,
+      "glyph_count": 17
+    },
+    {
+      "offset": 2691136,
+      "byte_length": 5688,
+      "sha256": "33f6544ba24a494f6213a627e5f64988afef1ad5e450ec3d1703ec81f51b5450",
+      "font_size_px": 48,
+      "glyph_count": 17
+    },
+    {
+      "offset": 2696832,
+      "byte_length": 5184,
+      "sha256": "3e0eafb4cfe4e411f20e9a3652d91250987c6484ea2e67d611358cdf63838b80",
+      "font_size_px": 46,
+      "glyph_count": 17
+    },
+    {
+      "offset": 2702016,
+      "byte_length": 4676,
+      "sha256": "693f3dd2069aa44032b66d434727495a16c2d38f0acb33b5a331674397c91208",
+      "font_size_px": 44,
+      "glyph_count": 17
+    },
+    {
+      "offset": 2706752,
+      "byte_length": 4240,
+      "sha256": "9e7c0c2b1ea3f30103433baa14ac3caf5d2cebc856ec17da192cf2e1089bd3af",
+      "font_size_px": 42,
+      "glyph_count": 17
+    },
+    {
+      "offset": 2711040,
+      "byte_length": 3904,
+      "sha256": "fba2eb58a36040d82067c8373a9412d1cf0e7b8df140a84992a4a5154d2ba6f5",
+      "font_size_px": 40,
+      "glyph_count": 17
+    },
+    {
+      "offset": 2714944,
+      "byte_length": 3564,
+      "sha256": "f31e48c9e052ae05338b8a6cd05a26a27e7c51b5fb71d5ac51533a5c37f3d43c",
+      "font_size_px": 38,
+      "glyph_count": 17
+    },
+    {
+      "offset": 2718528,
+      "byte_length": 3244,
+      "sha256": "3331cbe30e5bba4a8ccbaa3200951370ed6ce1321fc08e82cbe800cf54387cf0",
+      "font_size_px": 36,
+      "glyph_count": 17
+    },
+    {
+      "offset": 2721792,
+      "byte_length": 3492,
+      "sha256": "543e763df21f8c101cde1bac923fe40ba126daf8b7ea321f90a78c87d2c1da5e",
+      "font_size_px": 36,
+      "glyph_count": 19
+    },
+    {
+      "offset": 2725312,
+      "byte_length": 2984,
+      "sha256": "eab47827ed28a997bdf7329eb2bae8c78916ee3947e5bb55d186d5c346c733a7",
+      "font_size_px": 36,
+      "glyph_count": 18
+    },
+    {
+      "offset": 2728320,
+      "byte_length": 3316,
+      "sha256": "bfb0f3172f7db857648190e09fe1a5132e7db4892801ad882e7d05e9579e9df8",
+      "font_size_px": 34,
+      "glyph_count": 19
+    },
+    {
+      "offset": 2731648,
+      "byte_length": 3236,
+      "sha256": "880d02cd58889171781fdb06218850788f4eabdc5cc6a9c3b470d3a77775f140",
+      "font_size_px": 32,
+      "glyph_count": 21
+    },
+    {
+      "offset": 2734912,
+      "byte_length": 2660,
+      "sha256": "dcf85fd6cf821209a51de61afa273d8ef73fd405a3c689ad4a3aaab4ffc47fab",
+      "font_size_px": 28,
+      "glyph_count": 21
+    },
+    {
+      "offset": 2737600,
+      "byte_length": 2020,
+      "sha256": "24059cd6ad78e2d5951f3b7adf2abaaf099ad472b2eb453d70094a939567a300",
+      "font_size_px": 26,
+      "glyph_count": 18
+    },
+    {
+      "offset": 2739648,
+      "byte_length": 1608,
+      "sha256": "2318c47ce8cfd79406771c895516d08cd00e4b5f99b789abce9624cb95ce9ce5",
+      "font_size_px": 24,
+      "glyph_count": 18
+    },
+    {
+      "offset": 2741312,
+      "byte_length": 1656,
+      "sha256": "ef9f5cb18770332566d57e583b58e26431188909c83f078a4d46835949fad619",
+      "font_size_px": 24,
+      "glyph_count": 18
+    },
+    {
+      "offset": 2742976,
+      "byte_length": 1148,
+      "sha256": "89714a68c6b896405af79acd4460078a390e6250735885104f67dcb017b32ff9",
+      "font_size_px": 20,
+      "glyph_count": 17
+    },
+    {
+      "offset": 2744128,
+      "byte_length": 996,
+      "sha256": "99f976ca92eac28a2f034ac8eaa31951030009298fd46cccb0ec636867e4e9b6",
+      "font_size_px": 18,
+      "glyph_count": 17
+    },
+    {
+      "offset": 2745152,
+      "byte_length": 7792,
+      "sha256": "31fc9c691eeefe9c9b87a0b9c39428786b3ba3c2485bd85c258f6497ef6c379c",
+      "font_size_px": 48,
+      "glyph_count": 25
+    },
+    {
+      "offset": 2752960,
+      "byte_length": 3760,
+      "sha256": "6f69b5c68f7ffff1a380bd458f393b38623457137200844fc3923aadae6a51d1",
+      "font_size_px": 36,
+      "glyph_count": 22
+    },
+    {
+      "offset": 2756736,
+      "byte_length": 34468,
+      "sha256": "3eea50cacfce094d952188c9b4ffe46bd0fe449a244b848b220e3e1f21e87fdf",
+      "font_size_px": 120,
+      "glyph_count": 21
+    },
+    {
+      "offset": 2791232,
+      "byte_length": 34340,
+      "sha256": "17b91c32ea72479a9dde6b6243b28196bd4df0cef97470cb46ac714906f21cde",
+      "font_size_px": 104,
+      "glyph_count": 25
+    },
+    {
+      "offset": 2825600,
+      "byte_length": 18056,
+      "sha256": "19775f78c638764973ba2b701dd1641a20198ac67a31d6725018670d33e5a0d1",
+      "font_size_px": 48,
+      "glyph_count": 96
+    },
+    {
+      "offset": 2843712,
+      "byte_length": 44416,
+      "sha256": "e68074a1685066a028db1b4dcf38bf8fce9c32a1681426dfd36d6b22eec5065e",
+      "font_size_px": 48,
+      "glyph_count": 215
+    },
+    {
+      "offset": 2888128,
+      "byte_length": 23020,
+      "sha256": "070a76b314351a4344addefa494450b50c82e5db45a9241331eca0e0c7302aeb",
+      "font_size_px": 44,
+      "glyph_count": 139
+    },
+    {
+      "offset": 2911168,
+      "byte_length": 13844,
+      "sha256": "7594e77a987003ef5f188f272e439d7cf37cbd93afc398ae954caf5e65d61eea",
+      "font_size_px": 40,
+      "glyph_count": 96
+    },
+    {
+      "offset": 2925056,
+      "byte_length": 34444,
+      "sha256": "c4a6cda469b3e2c2ded30d0389d1b66e01a1f36a248f11a4e8eec0a31ebd13cd",
+      "font_size_px": 38,
+      "glyph_count": 214
+    },
+    {
+      "offset": 2959552,
+      "byte_length": 13232,
+      "sha256": "e28e4d99b015396434ae30a74e0716e61a61c138e5cd069732cfb4e09b072874",
+      "font_size_px": 38,
+      "glyph_count": 96
+    },
+    {
+      "offset": 2972800,
+      "byte_length": 43256,
+      "sha256": "da03b65f4ae5578301b228b722f8c5d35d5ed9d20719ee65ae74ca7866c00b7b",
+      "font_size_px": 36,
+      "glyph_count": 299
+    },
+    {
+      "offset": 3016064,
+      "byte_length": 13284,
+      "sha256": "d6ade219bef1415f1b8b4958d95c13cc7798aa4cc1caeb7d83cfbd871cea5156",
+      "font_size_px": 36,
+      "glyph_count": 96
+    },
+    {
+      "offset": 3029376,
+      "byte_length": 251016,
+      "sha256": "25910587864c779f804e476510e3dfb083bbc98f9cb7451a4a80fc449de8d49b",
+      "font_size_px": 36,
+      "glyph_count": 1166
+    },
+    {
+      "offset": 3280448,
+      "byte_length": 13352,
+      "sha256": "ffbfefe7ff3b2af798407c70df6482bc0db2a331ef940b58c46748d342c1e296",
+      "font_size_px": 36,
+      "glyph_count": 115
+    },
+    {
+      "offset": 3293824,
+      "byte_length": 140992,
+      "sha256": "05d9786cefb627faa20d1b8092eb4c59263e91a4be096882b2936f6359952491",
+      "font_size_px": 34,
+      "glyph_count": 775
+    },
+    {
+      "offset": 3434816,
+      "byte_length": 11596,
+      "sha256": "20759f7ece4ef7ec9270c92f6e936f1891fc43f5ffce90416ae9b57baad653fe",
+      "font_size_px": 34,
+      "glyph_count": 96
+    },
+    {
+      "offset": 3446464,
+      "byte_length": 307672,
+      "sha256": "1830da5d558fd56fb24a2f7f832f2582406f1bcae6782c5491e0b565487723e2",
+      "font_size_px": 32,
+      "glyph_count": 1596
+    },
+    {
+      "offset": 3754176,
+      "byte_length": 519620,
+      "sha256": "c3ff0b9ed549c0014026b6b365e2dc5b1c79237ea63151b964780cd1209f4994",
+      "font_size_px": 32,
+      "glyph_count": 2451
+    },
+    {
+      "offset": 4273856,
+      "byte_length": 9640,
+      "sha256": "9b720246411c07d102a5fea346931ed2d474900a698f837080f6cbc9b098be75",
+      "font_size_px": 32,
+      "glyph_count": 96
+    },
+    {
+      "offset": 4283520,
+      "byte_length": 9492,
+      "sha256": "90a63aa91a628a6502ae4b9209a4b9545e85fd4b6617a8f0cb036c64772b6475",
+      "font_size_px": 30,
+      "glyph_count": 96
+    },
+    {
+      "offset": 4293056,
+      "byte_length": 57320,
+      "sha256": "4f1b44fb1859120b2bedc1de972911a30e25b5fa0304faa3df6bfbedabe56243",
+      "font_size_px": 28,
+      "glyph_count": 490
+    },
+    {
+      "offset": 4350400,
+      "byte_length": 254128,
+      "sha256": "7e3464bfb8a6d48c5cd93e2e7974f4c6907de4a665258c78de046dcba3879f40",
+      "font_size_px": 28,
+      "glyph_count": 1503
+    },
+    {
+      "offset": 4604544,
+      "byte_length": 9280,
+      "sha256": "7dcd9f6dac58affc203be00fc45f443501234fcf498fade72fd44cc379f05195",
+      "font_size_px": 26,
+      "glyph_count": 108
+    },
+    {
+      "offset": 4613824,
+      "byte_length": 18148,
+      "sha256": "d6a3b5e6d1a807edeaf3aaa96237b03239f2bc5b5066a31491003d599281919c",
+      "font_size_px": 24,
+      "glyph_count": 238
+    },
+    {
+      "offset": 4632000,
+      "byte_length": 175552,
+      "sha256": "ff4c8606b76dfcb3dfda48a2fb9b9cbf5b44af8cd201ab1f4ef7ce7de579bc55",
+      "font_size_px": 24,
+      "glyph_count": 1312
+    },
+    {
+      "offset": 4807552,
+      "byte_length": 30192,
+      "sha256": "852b909852a94851d1c327e2d86268d880fee0366aa09d83b439006ae3fba589",
+      "font_size_px": 24,
+      "glyph_count": 384
+    },
+    {
+      "offset": 4837760,
+      "byte_length": 9976,
+      "sha256": "6d0b8916d1db28fa1b3df251e4233019cd2c175d71b9a44103a20615e280b048",
+      "font_size_px": 20,
+      "glyph_count": 171
+    },
+    {
+      "offset": 4847744,
+      "byte_length": 31036,
+      "sha256": "352a11d87617140f1468c2c2c264eb4e00ecad1a6848034833a1b741b1f0a671",
+      "font_size_px": 18,
+      "glyph_count": 460
+    },
+    {
+      "offset": 4878784,
+      "byte_length": 20352,
+      "sha256": "d47b6d1e9f6fbc007c99ab3ab439c15dd1b717f201dfcefb795edda77636dbe6",
+      "font_size_px": 56,
+      "glyph_count": 97
+    },
+    {
+      "offset": 11579200,
+      "byte_length": 5320508,
+      "sha256": "416fe976f3c9fa7e758ac156e4de27d82c01361d772a9a4ee88f36a91fc11e7e",
+      "font_size_px": 32,
+      "glyph_count": 36021
+    }
+  ]
+}
