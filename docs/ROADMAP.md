@@ -10,3 +10,5 @@
 Firmware modification, flashing, reset and unpairing are never implied by this roadmap. Each feature gets a separate branch and pull request. The owner authorized merging implementation PRs after required checks pass on 2026-10-13; no protection bypasses.
 
 Georgian work now includes a read-only [font audit tool](../tools/font_audit/README.md). It found no Georgian character mappings in 56 distinct parseable fonts from an older public dump. Matching 1.0.0.73 resources and a verified installation mechanism are still required before a native notification fix can be implemented.
+
+A standalone [Georgian font prototype](../tools/georgian_font/README.md) now verifies glyph serialization and produces previews. Integrating it into notification rendering is still blocked on version-specific font selection and a verified resource installation/recovery mechanism.

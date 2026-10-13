@@ -34,3 +34,7 @@ This app currently supports neither custom watch fonts nor notification forwardi
 An ordinary iOS application has no Android-style notification listener for reading all other apps' notification contents. [Apple UserNotifications](https://developer.apple.com/documentation/usernotifications) concerns an app's own notifications. [Apple Notification Center Service (ANCS)](https://developer.apple.com/library/archive/documentation/CoreBluetooth/Reference/AppleNotificationCenterServiceSpecification/Introduction/Introduction.html) is a separate accessory protocol with user authorization; it is not blanket access for a companion app. Any watch ANCS capability or interaction with the official app must be investigated separately. Phone localization does not change iOS notification restrictions or the watch's fonts.
 
 Research sources and attribution are in [BLE_RESEARCH.md](BLE_RESEARCH.md). No third-party fonts or proprietary artwork are bundled.
+
+## Standalone font prototype
+
+[Licensed Georgian LVGL fonts](../tools/georgian_font/README.md) can now be generated at 24, 28 and 32 px. Their decoded bitmaps match the converter raster for 161 characters per size. Laptop previews are readable; watch loading and rendering remain untested. These small font subsets must not replace full system fonts. See [branch findings and remaining requirements](research/BRANCH_AND_FONT_PROTOTYPE.md).

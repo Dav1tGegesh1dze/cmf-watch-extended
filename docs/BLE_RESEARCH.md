@@ -35,3 +35,5 @@ Record the source revision and license, exact command and framing, byte order, l
 ## Font evidence
 
 See [the read-only audit tool](../tools/font_audit/README.md) for pinned LVGL format references, parser limitations and the older public-dump inventory. This analysis uses no BLE operations. It does not establish a system-font upload command or compatibility with firmware 1.0.0.73.
+
+[Branch investigation](research/BRANCH_AND_FONT_PROTOTYPE.md) found an upstream flashing branch, but successful modified firmware installation is explicitly unresolved there. Its code was not executed. The new standalone font prototype introduces no BLE behavior.
