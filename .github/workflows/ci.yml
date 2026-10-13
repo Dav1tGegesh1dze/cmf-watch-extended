@@ -32,6 +32,8 @@ jobs:
           cache-read-only: ${{ github.event_name == 'pull_request' }}
       - name: Validate Gradle configuration
         run: ./gradlew help :shared:tasks --all --max-workers=2 --stacktrace
+      - name: Test offline font audit with synthetic fixtures
+        run: python3 -m unittest discover -s tools/font_audit -v
 
   android:
     name: CMF Android and shared tests

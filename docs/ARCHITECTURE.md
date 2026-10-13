@@ -21,3 +21,7 @@ On iOS, `CBCentralManager` is constructed on the first explicit scan request, so
 The Material 3 interface follows system light/dark appearance and supports an explicit English/Georgian toggle (retained across ordinary UI recreation). Georgian text uses the platform font stack; physical-device glyph inspection remains part of acceptance testing. Dependencies remain in the version catalog. The wizard's Material 3 alpha was replaced with the latest published stable Material 3 release available during implementation; existing stable compiler/Compose/AGP versions are preserved.
 
 Tests exercise controller state transitions and repository/ViewModel behavior with a fake transport and virtual time. Actual OS permission sheets, radio state, lifecycle integration and real advertisement reception require device tests; see [TESTING.md](TESTING.md).
+
+## Offline research tools
+
+`tools/font_audit` is a standalone Python standard-library character-map parser with synthetic tests. It is not linked into the KMP app and has no BLE or firmware-write APIs. CI runs its tests in the Gradle configuration job. Vendor binaries remain outside Git; reports retain hashes and offsets for reproducibility.

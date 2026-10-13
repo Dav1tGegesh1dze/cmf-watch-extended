@@ -31,3 +31,7 @@ These projects report results on their own hardware. They are not evidence that 
 ## Gate for every later protocol feature
 
 Record the source revision and license, exact command and framing, byte order, length limits, checksum, authentication and encryption requirements, error behavior and firmware version. Add independently authored encoding/decoding tests with non-secret fixtures. Reconcile conflicting references. Obtain approval for operations that change pairing or firmware. Only label a hardware feature verified after an actual device test with redacted results. Never commit authentication keys or private captures.
+
+## Font evidence
+
+See [the read-only audit tool](../tools/font_audit/README.md) for pinned LVGL format references, parser limitations and the older public-dump inventory. This analysis uses no BLE operations. It does not establish a system-font upload command or compatibility with firmware 1.0.0.73.

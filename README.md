@@ -11,9 +11,13 @@ Experimental Kotlin Multiplatform companion application for the **CMF Watch Pro 
 - Responsive Material UI with system light/dark themes and English/Georgian text.
 - Shared state/repository tests and GitHub Actions for Android and iOS.
 
-The app discovers all nearby BLE advertisers. A listed name does **not** verify that a device is a CMF watch. No pairing, connection, authentication, watch commands, GATT access, notification forwarding or firmware transfer is implemented. Discovery on the intended physical watch/iPhone remains unverified.
+The app discovers all nearby BLE advertisers. A listed name does **not** verify that a device is a CMF watch. No pairing, connection, authentication, watch commands, GATT access, notification forwarding or firmware transfer is implemented. The owner confirmed discovery on an iPhone 16 Pro and Georgian rendering in the phone UI; the remaining hardware checklist is still pending.
 
 Your watch may not advertise while connected to the official CMF application. Preserve the existing pairing; do not reset or unpair it for this phase. Future connection work may conflict with the official app and requires separate testing.
+
+## Georgian watch-font investigation
+
+The [offline font audit tool](tools/font_audit/README.md) checks LVGL character maps without contacting the watch. Tests and a reproducible inventory of an older public firmware dump are included. This is research tooling: Georgian watch notifications remain unsupported by this app. The owner reports English notifications work and Georgian appears as boxes on firmware 1.0.0.73.
 
 ## Platforms and build
 

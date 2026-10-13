@@ -7,4 +7,6 @@
 5. **Customization research:** local watchface preview and Georgian raster text first; transfer only after documented formats, checksums, bounds and recovery behavior are verified.
 6. **Notifications and diagnostics:** controlled notifications where supported, clear iOS limitations, connection health, locally collected battery history, redacted log export and experimental feature flags.
 
-Firmware modification, flashing, reset and unpairing are never implied by this roadmap. Each feature gets a separate branch and pull request; no automatic merges.
+Firmware modification, flashing, reset and unpairing are never implied by this roadmap. Each feature gets a separate branch and pull request. The owner authorized merging implementation PRs after required checks pass on 2026-10-13; no protection bypasses.
+
+Georgian work now includes a read-only [font audit tool](../tools/font_audit/README.md). It found no Georgian character mappings in 56 distinct parseable fonts from an older public dump. Matching 1.0.0.73 resources and a verified installation mechanism are still required before a native notification fix can be implemented.
