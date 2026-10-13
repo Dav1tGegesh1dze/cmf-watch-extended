@@ -34,6 +34,21 @@ jobs:
         run: ./gradlew help :shared:tasks --all --max-workers=2 --stacktrace
       - name: Test offline font audit with synthetic fixtures
         run: python3 -m unittest discover -s tools/font_audit -v
+      - name: Build and verify Georgian font prototype
+        run: |
+          npm ci --prefix tools/georgian_font --ignore-scripts --no-audit --no-fund
+          python3 -m unittest discover -s tools/georgian_font -v
+          python3 tools/georgian_font/build.py
+      - name: Save standalone Georgian font prototype
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: georgian-font-prototype
+          path: |
+            build/georgian-font/georgian*.font
+            build/georgian-font/preview*.png
+            build/georgian-font/manifest.json
+            build/georgian-font/OFL.txt
+          retention-days: 7
 
   android:
     name: CMF Android and shared tests

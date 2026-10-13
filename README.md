@@ -60,3 +60,5 @@ Georgian localization and preview text affect the phone only. Watch font coverag
 Each feature uses a separate branch and PR to protected `main`. CI runs for PRs to main and feature-branch pushes. Required checks are configured only after successful runs. No automatic merges.
 
 No third-party implementation, font or proprietary brand artwork is copied. The repository owner has not yet selected a project-wide open-source license; public source availability alone does not grant reuse rights.
+
+The [standalone Georgian font prototype](tools/georgian_font/README.md) generates and verifies licensed LVGL font assets and previews offline. It is not a watch-font installer or a notification fix.

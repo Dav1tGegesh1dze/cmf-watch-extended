@@ -25,3 +25,5 @@ Tests exercise controller state transitions and repository/ViewModel behavior wi
 ## Offline research tools
 
 `tools/font_audit` is a standalone Python standard-library character-map parser with synthetic tests. It is not linked into the KMP app and has no BLE or firmware-write APIs. CI runs its tests in the Gradle configuration job. Vendor binaries remain outside Git; reports retain hashes and offsets for reproducibility.
+
+`tools/georgian_font` invokes a pinned MIT-licensed converter and verifies generated binary glyphs with an independent Python decoder. It remains outside the KMP runtime; it contains no firmware patching or device transport.
