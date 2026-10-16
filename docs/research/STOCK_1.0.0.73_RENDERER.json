@@ -1,0 +1,66 @@
+{
+  "stock_sha256": "30903fc8ce6db4f8860bb554366635db3d2bcbb2d43827b3b50fbbac22b59353",
+  "app_sha256": "30e7978c39d8fb79b825c7ebf69b4377d214e9cc6739a52f06dbb5ff7f13b490",
+  "inferred_runtime_base": "0x10000000",
+  "path_loads": [
+    {
+      "address": "0x1006a8a0",
+      "path": "/NAND:C/sans32.font",
+      "string_address": "0x10201dee"
+    },
+    {
+      "address": "0x1006a8ae",
+      "path": "/NAND:C/emoji28.font",
+      "string_address": "0x10201dd9"
+    },
+    {
+      "address": "0x1006a8c0",
+      "path": "/NAND:A/font34R.font",
+      "string_address": "0x10203c47"
+    },
+    {
+      "address": "0x100df9ae",
+      "path": "/NAND:C/sans32.font",
+      "string_address": "0x10201dee"
+    },
+    {
+      "address": "0x100df9b4",
+      "path": "/NAND:C/emoji28.font",
+      "string_address": "0x10201dd9"
+    }
+  ],
+  "direct_calls": [
+    {
+      "address": "0x1006a8a2",
+      "target": "0x100df9a0"
+    },
+    {
+      "address": "0x1006a8b0",
+      "target": "0x10185a38"
+    },
+    {
+      "address": "0x1006a8cc",
+      "target": "0x100df9a0"
+    },
+    {
+      "address": "0x100df9a6",
+      "target": "0x10185c30"
+    },
+    {
+      "address": "0x100df9b8",
+      "target": "0x10185a38"
+    },
+    {
+      "address": "0x100df9c4",
+      "target": "0x10185bbc"
+    },
+    {
+      "address": "0x10185c06",
+      "target": "0x101d73ee"
+    }
+  ],
+  "default_codepoint": "U+56D7",
+  "default_load": "0x100df9bc",
+  "default_store": "0x101d73f0",
+  "limitations": "Selected instructions only, not a full control-flow proof or hardware verification."
+}
