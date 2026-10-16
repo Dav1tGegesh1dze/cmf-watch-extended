@@ -66,3 +66,7 @@ The [standalone Georgian font prototype](tools/georgian_font/README.md) generate
 The [latest Georgian rendering investigation](docs/research/GEORGIAN_ACQUISITION_FOLLOWUP.md) records verified OTA acquisition metadata and notification-font analysis leads, with remaining blockers.
 
 The [static notification-renderer trace](docs/research/NOTIFICATION_RENDERER.md) now ties the older message popup to `sans32.font` and a configured default character. A read-only, hash-bound verifier reproduces selected evidence; installed 1.0.0.73 rendering is still unverified.
+
+## Matching-version stock resource audit
+
+The [1.0.0.73 package audit](docs/research/STOCK_1.0.0.73_AUDIT.md) now verifies a matching-version public resource package, its internal version and partition checksums. Its named `sans32.font` is identical to the older font and lacks Georgian character mappings. This supersedes earlier missing-resource blockers; reproducible newer-renderer tracing, font integration and a supported installation/recovery route remain pending. The audit is offline and read-only; the phone app remains discovery-only and watch rendering is not fixed.

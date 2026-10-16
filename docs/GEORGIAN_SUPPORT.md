@@ -42,3 +42,7 @@ Research sources and attribution are in [BLE_RESEARCH.md](BLE_RESEARCH.md). No t
 The [2026-10-16 acquisition follow-up](research/GEORGIAN_ACQUISITION_FOLLOWUP.md) verified that the older public OTA object remains reachable, rejected a duplicate dump as new evidence, and recorded offline notification/font string offsets. Matching-version font selection remains unverified.
 
 The [older-image renderer trace](research/NOTIFICATION_RENDERER.md) now identifies explicit `sans32.font` loading in the message popup and a configured U+56D7 default. The named font lacks the sample Georgian letters. This strengthens the missing-glyph explanation for the older image; it does not prove the installed 1.0.0.73 rendering path.
+
+## Matching-version stock resource audit
+
+The [1.0.0.73 package audit](research/STOCK_1.0.0.73_AUDIT.md) now verifies a matching-version public resource package, its internal version and partition checksums. Its named `sans32.font` is identical to the older font and lacks Georgian character mappings. This supersedes earlier missing-resource blockers; reproducible newer-renderer tracing, font integration and a supported installation/recovery route remain pending. The audit is offline and read-only; the phone app remains discovery-only and watch rendering is not fixed.

@@ -16,3 +16,7 @@ A standalone [Georgian font prototype](../tools/georgian_font/README.md) now ver
 The next Georgian research step is tracing notification font assignment and fallback from the [recorded offline leads](research/GEORGIAN_ACQUISITION_FOLLOWUP.md), while obtaining matching-version resources. A duplicate older dump or changed version label cannot satisfy that requirement.
 
 The [older-image notification trace](research/NOTIFICATION_RENDERER.md) now establishes explicit font loading and default-character configuration. Next: obtain matching 1.0.0.73 resources, verify the same renderer path, and assess a coverage-preserving integration plus installation/recovery route before any firmware change.
+
+## Matching-version stock resource audit
+
+The [1.0.0.73 package audit](research/STOCK_1.0.0.73_AUDIT.md) now verifies a matching-version public resource package, its internal version and partition checksums. Its named `sans32.font` is identical to the older font and lacks Georgian character mappings. This supersedes earlier missing-resource blockers; reproducible newer-renderer tracing, font integration and a supported installation/recovery route remain pending. The audit is offline and read-only; the phone app remains discovery-only and watch rendering is not fixed.

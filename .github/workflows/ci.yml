@@ -34,6 +34,8 @@ jobs:
         run: ./gradlew help :shared:tasks --all --max-workers=2 --stacktrace
       - name: Test offline font audit with synthetic fixtures
         run: python3 -m unittest discover -s tools/font_audit -v
+      - name: Test read-only stock firmware audit
+        run: python3 -m unittest discover -s tools/firmware_audit -v
       - name: Test notification font evidence bounds
         run: python3 -m unittest discover -s tools/notification_font -v
       - name: Build and verify Georgian font prototype

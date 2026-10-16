@@ -41,3 +41,7 @@ See [the read-only audit tool](../tools/font_audit/README.md) for pinned LVGL fo
 The [acquisition follow-up](research/GEORGIAN_ACQUISITION_FOLLOWUP.md) adds a pinned source review and read-only CDN/header evidence. No device protocol or firmware installation behavior was added.
 
 The [notification-renderer analysis](research/NOTIFICATION_RENDERER.md) is static and offline. Its inferred code addresses apply only to the hashed older dump and are never BLE commands, write targets or firmware patch offsets.
+
+## Matching-version stock resource audit
+
+The [1.0.0.73 package audit](research/STOCK_1.0.0.73_AUDIT.md) now verifies a matching-version public resource package, its internal version and partition checksums. Its named `sans32.font` is identical to the older font and lacks Georgian character mappings. This supersedes earlier missing-resource blockers; reproducible newer-renderer tracing, font integration and a supported installation/recovery route remain pending. The audit is offline and read-only; the phone app remains discovery-only and watch rendering is not fixed.
