@@ -1,0 +1,78 @@
+{
+  "input_sha256": "a201168bc4dda50d64a248690823470f2c5b5f1012feedbc901644b615598e6b",
+  "input_bytes": 80321216,
+  "scope": "Static evidence from the older image only; not verified on firmware 1.0.0.73.",
+  "address_mapping": {
+    "app_file_offset": "0x800",
+    "app_bytes": 2445440,
+    "inferred_runtime_base": "0x10000000",
+    "app_crc32": "0x78ae6370"
+  },
+  "path_loads": [
+    {
+      "address": "0x1006813c",
+      "literal_pool": "0x10068314",
+      "string_address": "0x101fdb2c",
+      "path": "/NAND:C/sans32.font"
+    },
+    {
+      "address": "0x1006814a",
+      "literal_pool": "0x10068318",
+      "string_address": "0x101fdb17",
+      "path": "/NAND:C/emoji28.font"
+    },
+    {
+      "address": "0x1006815c",
+      "literal_pool": "0x1006833c",
+      "string_address": "0x101ff89c",
+      "path": "/NAND:A/font34R.font"
+    },
+    {
+      "address": "0x100dd1ea",
+      "literal_pool": "0x100dd24c",
+      "string_address": "0x101fdb2c",
+      "path": "/NAND:C/sans32.font"
+    },
+    {
+      "address": "0x100dd1f0",
+      "literal_pool": "0x100dd250",
+      "string_address": "0x101fdb17",
+      "path": "/NAND:C/emoji28.font"
+    }
+  ],
+  "direct_calls": [
+    {
+      "address": "0x1006813e",
+      "target": "0x100dd1dc"
+    },
+    {
+      "address": "0x1006814c",
+      "target": "0x10181b60"
+    },
+    {
+      "address": "0x10068168",
+      "target": "0x100dd1dc"
+    },
+    {
+      "address": "0x100dd1e2",
+      "target": "0x10181d58"
+    },
+    {
+      "address": "0x100dd1f4",
+      "target": "0x10181b60"
+    },
+    {
+      "address": "0x100dd200",
+      "target": "0x10181ce4"
+    },
+    {
+      "address": "0x10181d2e",
+      "target": "0x101d3446"
+    }
+  ],
+  "default_character": {
+    "load_address": "0x100dd1f8",
+    "codepoint": "U+56D7"
+  },
+  "limitations": "Selected instructions are verified, not a complete control-flow proof. Emoji loading is not evidence of arbitrary Unicode font fallback. No installation mechanism or safe replacement is established."
+}
