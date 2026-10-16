@@ -48,6 +48,10 @@ class InspectionTests(unittest.TestCase):
         struct.pack_into('<I', data, 8, len(data) - 16)
         with self.assertRaises(ValueError): unpack(data)
 
+    def test_renderer_hash_binding(self):
+        from trace_renderer import trace
+        with self.assertRaisesRegex(ValueError, 'pinned'): trace(archive())
+
     def test_hash_binding(self):
         with self.assertRaisesRegex(ValueError, 'pinned'): inspect(archive())
 
