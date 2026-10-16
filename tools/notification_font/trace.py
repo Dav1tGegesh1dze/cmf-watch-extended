@@ -96,7 +96,26 @@ def trace(data):
         (0x10068168, 0x100dd1dc), (0x100dd1e2, 0x10181d58),
         (0x100dd1f4, 0x10181b60), (0x100dd200, 0x10181ce4),
         (0x10181d2e, 0x101d3446),
+        (0x10181af2, 0x1017ff60),
+        (0x1017ffa2, 0x1017f418), (0x1017ffda, 0x1017f418),
+        (0x1017f99c, 0x1017f418), (0x1017f9e8, 0x1017f418),
     ]]
+    thresholds = []
+    for address in (0x10181a3a, 0x10181ada):
+        insn = instruction(address)
+        require(insn.mnemonic == 'ldr' and insn.operands[1].type == ARM_OP_MEM
+                and insn.operands[1].mem.base == ARM_REG_PC, 'expected threshold literal')
+        pool = literal_address(address, insn.operands[1].mem.disp)
+        value = struct.unpack_from('<I', data, file_offset(pool, 4))[0]
+        require(value == 0x1f2ff, 'unexpected emoji threshold')
+        thresholds.append({'load_address': hex(address), 'last_normal_codepoint': 'U+1F2FF'})
+    default_reads = []
+    for address, base in ((0x1017f9a2, 'r4'), (0x1017ffaa, 'r5')):
+        insn = instruction(address)
+        require(insn.mnemonic == 'ldr.w' and insn.operands[1].type == ARM_OP_MEM
+                and insn.reg_name(insn.operands[1].mem.base) == base
+                and insn.operands[1].mem.disp == 0xb4, 'expected default-character read')
+        default_reads.append(hex(address))
     default = instruction(0x100dd1f8)
     require(default.mnemonic == 'movw' and default.reg_name(default.operands[0].reg) == 'r1'
             and default.operands[1].type == ARM_OP_IMM and default.operands[1].imm == 0x56d7,
@@ -107,6 +126,7 @@ def trace(data):
         'address_mapping': {'app_file_offset': hex(APP_OFFSET), 'app_bytes': APP_SIZE,
                             'inferred_runtime_base': hex(APP_BASE), 'app_crc32': hex(crc)},
         'path_loads': paths, 'direct_calls': calls,
+        'emoji_thresholds': thresholds, 'default_character_reads': default_reads,
         'default_character': {'load_address': hex(default.address), 'codepoint': 'U+56D7'},
         'limitations': 'Selected instructions are verified, not a complete control-flow proof. '
                         'Emoji loading is not evidence of arbitrary Unicode font fallback. '

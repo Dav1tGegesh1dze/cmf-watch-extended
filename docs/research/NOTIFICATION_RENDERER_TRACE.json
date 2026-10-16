@@ -68,7 +68,41 @@
     {
       "address": "0x10181d2e",
       "target": "0x101d3446"
+    },
+    {
+      "address": "0x10181af2",
+      "target": "0x1017ff60"
+    },
+    {
+      "address": "0x1017ffa2",
+      "target": "0x1017f418"
+    },
+    {
+      "address": "0x1017ffda",
+      "target": "0x1017f418"
+    },
+    {
+      "address": "0x1017f99c",
+      "target": "0x1017f418"
+    },
+    {
+      "address": "0x1017f9e8",
+      "target": "0x1017f418"
     }
+  ],
+  "emoji_thresholds": [
+    {
+      "load_address": "0x10181a3a",
+      "last_normal_codepoint": "U+1F2FF"
+    },
+    {
+      "load_address": "0x10181ada",
+      "last_normal_codepoint": "U+1F2FF"
+    }
+  ],
+  "default_character_reads": [
+    "0x1017f9a2",
+    "0x1017ffaa"
   ],
   "default_character": {
     "load_address": "0x100dd1f8",

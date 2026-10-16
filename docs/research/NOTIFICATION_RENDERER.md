@@ -24,7 +24,11 @@ Re-running the existing character-map audit on the named `sans32.font` (SHA-256 
 python3 tools/font_audit/audit.py build/font-audit/sans32.font --text 'ABC სალამი囗'
 ```
 
-**Inference:** missing Georgian glyphs plus a configured U+56D7 default is a concrete explanation for box-like substitution in this older renderer. We have not executed that renderer or proved the full missing-glyph path. The owner's 1.0.0.73 observation is consistent with this finding, but is not proof that the firmware versions share code or fonts.
+The glyph-metrics path calls `0x1017ff60`. Its first lookup (`0x1017ffa2`) is followed by a zero-result check; on a miss it loads the configured default at `0x1017ffaa` and repeats the lookup at `0x1017ffda`. The bitmap path has the analogous lookup/default/retry sequence at `0x1017f99c`, `0x1017f9a2`, and `0x1017f9e8`. Selected call targets and default-field reads are checked by the verifier; the branch/register flow was manually inspected.
+
+Both glyph callbacks compare the code point with `0x1f2ff` before the emoji route. Georgian Mkhedruli and Mtavruli are below that threshold and take the normal-font route in this code. Adding Georgian to `emoji28.font` alone would therefore not provide a fallback for those characters. This is a code-path finding, not a runtime test.
+
+**Inference:** missing Georgian glyphs plus a configured U+56D7 default and a lookup retry using that default explain box-like substitution in this older renderer. We have not executed the renderer. The owner's 1.0.0.73 observation is consistent with this finding, but is not proof that the firmware versions share code or fonts.
 
 ## Consequences for implementation
 
