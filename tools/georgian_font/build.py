@@ -37,14 +37,20 @@ def main():
     if hashlib.sha256(source.read_bytes()).hexdigest() != SOURCE_SHA256:
         raise RuntimeError('Cached source font checksum mismatch; refusing to use it')
     results = []
-    for size in (24, 28, 32):
+    for size, bpp, compressed in [(size, bpp, compressed) for size in (24, 28, 32)
+                                  for bpp, compressed in ((4, False), (2, True))]:
+        suffix = '-2bpp-rle' if compressed else ''
         common = ['node', str(converter / 'lv_font_conv.js'), '--font', str(source), '--range', RANGES,
-                  '--size', str(size), '--bpp', '4', '--no-compress', '--no-kerning']
-        target = OUTPUT / f'georgian{size}.font'
-        dump = OUTPUT / f'dump{size}'
+                  '--size', str(size), '--bpp', str(bpp), '--no-kerning']
+        if not compressed:
+            common.append('--no-compress')
+        target = OUTPUT / f'georgian{size}{suffix}.font'
+        dump = OUTPUT / f'dump{size}{suffix}'
         subprocess.run(common + ['--format', 'bin', '-o', str(target)], check=True, timeout=60)
         subprocess.run(common + ['--format', 'dump', '--full-info', '-o', str(dump)], check=True, timeout=60)
         data = target.read_bytes()
+        if data[37] != bpp or data[41] != (1 if compressed else 0):
+            raise RuntimeError('Converter did not produce the requested bitmap format')
         glyphs = decode(data, TEXT)
         reference = json.loads((dump / 'font_info.json').read_text())['glyphs']
         if {g['code'] for g in reference} != set(map(ord, TEXT)):
@@ -54,15 +60,16 @@ def main():
             bbox = expected['bbox']
             if any(actual[key] != bbox[key] for key in ('x', 'y', 'width', 'height')):
                 raise RuntimeError('Decoded glyph metrics differ from the converter raster')
-            if actual['pixels'] != [[p >> 4 for p in row] for row in expected['pixels']]:
+            if actual['pixels'] != [[p >> (8 - bpp) for p in row] for row in expected['pixels']]:
                 raise RuntimeError('Decoded glyph pixels differ from the converter raster')
             if abs(actual['advance'] - expected['advanceWidth']) > 0.51:
                 raise RuntimeError('Decoded advance differs from converter raster')
             if expected['code'] != 32 and not any(p for row in actual['pixels'] for p in row):
                 raise RuntimeError('Unexpected blank glyph')
-        preview = OUTPUT / f'preview{size}.png'
+        preview = OUTPUT / f'preview{size}{suffix}.png'
         preview.write_bytes(png_preview(glyphs, LINES))
-        results.append({'size_px': size, 'file': target.name, 'sha256': hashlib.sha256(data).hexdigest(),
+        results.append({'size_px': size, 'bpp': bpp, 'compression': 'rle-xor' if compressed else 'raw',
+                        'file': target.name, 'sha256': hashlib.sha256(data).hexdigest(),
                         'bytes': len(data), 'verified_glyphs': len(glyphs), 'preview': preview.name})
     shutil.copyfile(TOOL / 'OFL.txt', OUTPUT / 'OFL.txt')
     report = {'source_revision': SOURCE_REVISION, 'source_url': SOURCE_URL, 'source_sha256': SOURCE_SHA256,

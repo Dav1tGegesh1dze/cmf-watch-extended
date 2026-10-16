@@ -41,3 +41,5 @@ See [the read-only audit tool](../tools/font_audit/README.md) for pinned LVGL fo
 The [acquisition follow-up](research/GEORGIAN_ACQUISITION_FOLLOWUP.md) adds a pinned source review and read-only CDN/header evidence. No device protocol or firmware installation behavior was added.
 
 The [notification-renderer analysis](research/NOTIFICATION_RENDERER.md) is static and offline. Its inferred code addresses apply only to the hashed older dump and are never BLE commands, write targets or firmware patch offsets.
+
+The [compressed-font work](research/COMPRESSED_GEORGIAN_FONTS.md) adds offline asset generation and decoding only. It introduces no font-upload command or BLE behavior.

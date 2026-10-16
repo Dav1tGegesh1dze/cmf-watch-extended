@@ -16,3 +16,5 @@ A standalone [Georgian font prototype](../tools/georgian_font/README.md) now ver
 The next Georgian research step is tracing notification font assignment and fallback from the [recorded offline leads](research/GEORGIAN_ACQUISITION_FOLLOWUP.md), while obtaining matching-version resources. A duplicate older dump or changed version label cannot satisfy that requirement.
 
 The [older-image notification trace](research/NOTIFICATION_RENDERER.md) now establishes explicit font loading and default-character configuration. Next: obtain matching 1.0.0.73 resources, verify the same renderer path, and assess a coverage-preserving integration plus installation/recovery route before any firmware change.
+
+The [compressed font implementation](research/COMPRESSED_GEORGIAN_FONTS.md) closes the prototype depth/compression gap with the older notification font. The remaining work is matching-version analysis and coverage-preserving integration with a verified installation/recovery route.

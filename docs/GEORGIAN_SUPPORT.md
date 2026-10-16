@@ -42,3 +42,5 @@ Research sources and attribution are in [BLE_RESEARCH.md](BLE_RESEARCH.md). No t
 The [2026-10-16 acquisition follow-up](research/GEORGIAN_ACQUISITION_FOLLOWUP.md) verified that the older public OTA object remains reachable, rejected a duplicate dump as new evidence, and recorded offline notification/font string offsets. Matching-version font selection remains unverified.
 
 The [older-image renderer trace](research/NOTIFICATION_RENDERER.md) now identifies explicit `sans32.font` loading in the message popup and a configured U+56D7 default. The named font lacks the sample Georgian letters. This strengthens the missing-glyph explanation for the older image; it does not prove the installed 1.0.0.73 rendering path.
+
+[Compressed 2-bpp Georgian prototypes](research/COMPRESSED_GEORGIAN_FONTS.md) now pass independent bitmap decoding and raster comparisons. Offline decoding also shows the older font’s configured U+56D7 default as a hollow box. Neither result establishes a fix on firmware 1.0.0.73.
