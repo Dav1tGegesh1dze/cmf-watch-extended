@@ -29,3 +29,13 @@ Remaining requirements: verify matching stock firmware, identify notification fo
 ## Upstream request
 
 With the owner's authorization, posted a request for an original 1.0.0.73 OTA URL/hash or notification-font inventory: [issue comment](https://github.com/joshuapassos/CMF-Watch-Pro-2-BLE-Protocol/issues/2#issuecomment-6141536559). No response had been received at the time this report was written. No account material, device identifiers or private notification contents were shared.
+
+### Follow-up checked 2026-10-16
+
+[Vertexsss's comment on 2026-10-15](https://github.com/joshuapassos/CMF-Watch-Pro-2-BLE-Protocol/issues/2#issuecomment-6201236344) is another request for the stock 1.0.0.73 image, not a maintainer answer supplying it. It contains no OTA URL, SHA-256, font inventory or attached verification scripts.
+
+The commenter reports a byte-identical stock unpack/repack flow, a version check that rejects the August 2024 public image as a downgrade, and HTTP 503 responses from `iota.nothing.tech`. These are third-party reports, not independently reproduced findings. The comment does not establish current server availability, safe modified-image installation, or a recovery mechanism. Their reported device version check was not executed by this project.
+
+The next actionable input remains a provenance-backed stock 1.0.0.73 image or notification-font export, preferably accompanied by its SHA-256 and acquisition/version evidence. Once available, run the existing read-only font audit, identify the actual notification font and fallback behavior, and compare coverage with the standalone Georgian prototype. A successful stock round trip alone would not establish that a modified image is accepted or safe; changing version metadata is not an approved workaround.
+
+This follow-up changes research status only. No firmware was modified or transferred, no device commands were issued, and no new upstream message was posted. Android/iOS builds and hardware tests were not run locally for this documentation update.
