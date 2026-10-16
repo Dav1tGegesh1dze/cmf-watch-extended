@@ -12,3 +12,5 @@ Firmware modification, flashing, reset and unpairing are never implied by this r
 Georgian work now includes a read-only [font audit tool](../tools/font_audit/README.md). It found no Georgian character mappings in 56 distinct parseable fonts from an older public dump. Matching 1.0.0.73 resources and a verified installation mechanism are still required before a native notification fix can be implemented.
 
 A standalone [Georgian font prototype](../tools/georgian_font/README.md) now verifies glyph serialization and produces previews. Integrating it into notification rendering is still blocked on version-specific font selection and a verified resource installation/recovery mechanism.
+
+The next Georgian research step is tracing notification font assignment and fallback from the [recorded offline leads](research/GEORGIAN_ACQUISITION_FOLLOWUP.md), while obtaining matching-version resources. A duplicate older dump or changed version label cannot satisfy that requirement.
