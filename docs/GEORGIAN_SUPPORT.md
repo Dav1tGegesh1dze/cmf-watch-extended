@@ -38,3 +38,5 @@ Research sources and attribution are in [BLE_RESEARCH.md](BLE_RESEARCH.md). No t
 ## Standalone font prototype
 
 [Licensed Georgian LVGL fonts](../tools/georgian_font/README.md) can now be generated at 24, 28 and 32 px. Their decoded bitmaps match the converter raster for 161 characters per size. Laptop previews are readable; watch loading and rendering remain untested. These small font subsets must not replace full system fonts. See [branch findings and remaining requirements](research/BRANCH_AND_FONT_PROTOTYPE.md).
+
+The [2026-10-16 acquisition follow-up](research/GEORGIAN_ACQUISITION_FOLLOWUP.md) verified that the older public OTA object remains reachable, rejected a duplicate dump as new evidence, and recorded offline notification/font string offsets. Matching-version font selection remains unverified.
