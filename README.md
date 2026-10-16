@@ -64,3 +64,5 @@ No third-party implementation, font or proprietary brand artwork is copied. The 
 The [standalone Georgian font prototype](tools/georgian_font/README.md) generates and verifies licensed LVGL font assets and previews offline. It is not a watch-font installer or a notification fix.
 
 The [latest Georgian rendering investigation](docs/research/GEORGIAN_ACQUISITION_FOLLOWUP.md) records verified OTA acquisition metadata and notification-font analysis leads, with remaining blockers.
+
+The [static notification-renderer trace](docs/research/NOTIFICATION_RENDERER.md) now ties the older message popup to `sans32.font` and a configured default character. A read-only, hash-bound verifier reproduces selected evidence; installed 1.0.0.73 rendering is still unverified.

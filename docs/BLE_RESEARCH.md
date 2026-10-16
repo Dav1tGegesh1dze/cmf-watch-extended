@@ -39,3 +39,5 @@ See [the read-only audit tool](../tools/font_audit/README.md) for pinned LVGL fo
 [Branch investigation](research/BRANCH_AND_FONT_PROTOTYPE.md) found an upstream flashing branch, but successful modified firmware installation is explicitly unresolved there. Its code was not executed. The new standalone font prototype introduces no BLE behavior.
 
 The [acquisition follow-up](research/GEORGIAN_ACQUISITION_FOLLOWUP.md) adds a pinned source review and read-only CDN/header evidence. No device protocol or firmware installation behavior was added.
+
+The [notification-renderer analysis](research/NOTIFICATION_RENDERER.md) is static and offline. Its inferred code addresses apply only to the hashed older dump and are never BLE commands, write targets or firmware patch offsets.

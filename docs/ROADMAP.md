@@ -14,3 +14,5 @@ Georgian work now includes a read-only [font audit tool](../tools/font_audit/REA
 A standalone [Georgian font prototype](../tools/georgian_font/README.md) now verifies glyph serialization and produces previews. Integrating it into notification rendering is still blocked on version-specific font selection and a verified resource installation/recovery mechanism.
 
 The next Georgian research step is tracing notification font assignment and fallback from the [recorded offline leads](research/GEORGIAN_ACQUISITION_FOLLOWUP.md), while obtaining matching-version resources. A duplicate older dump or changed version label cannot satisfy that requirement.
+
+The [older-image notification trace](research/NOTIFICATION_RENDERER.md) now establishes explicit font loading and default-character configuration. Next: obtain matching 1.0.0.73 resources, verify the same renderer path, and assess a coverage-preserving integration plus installation/recovery route before any firmware change.
