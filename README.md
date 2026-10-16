@@ -66,3 +66,5 @@ The [standalone Georgian font prototype](tools/georgian_font/README.md) generate
 The [latest Georgian rendering investigation](docs/research/GEORGIAN_ACQUISITION_FOLLOWUP.md) records verified OTA acquisition metadata and notification-font analysis leads, with remaining blockers.
 
 The [static notification-renderer trace](docs/research/NOTIFICATION_RENDERER.md) now ties the older message popup to `sans32.font` and a configured default character. A read-only, hash-bound verifier reproduces selected evidence; installed 1.0.0.73 rendering is still unverified.
+
+Standalone generation now also includes [compressed 2-bpp Georgian fonts](docs/research/COMPRESSED_GEORGIAN_FONTS.md), verified against the converter raster. These are offline assets, not installable replacements for the full watch font.

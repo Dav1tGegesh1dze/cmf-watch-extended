@@ -29,3 +29,5 @@ Tests exercise controller state transitions and repository/ViewModel behavior wi
 `tools/georgian_font` invokes a pinned MIT-licensed converter and verifies generated binary glyphs with an independent Python decoder. It remains outside the KMP runtime; it contains no firmware patching or device transport.
 
 `tools/notification_font` verifies selected static font-selection evidence against one exact older decompressed image. Its optional Capstone dependency stays outside the phone app. Hash and address guards reject other images; there are no device or firmware-write APIs.
+
+The standalone bitmap decoder now supports bounded 2/4-bpp raw and RLE data, with or without row XOR filtering. The builder verifies both raw 4-bpp and compressed 2-bpp variants against converter rasters. This code remains outside the KMP runtime.
