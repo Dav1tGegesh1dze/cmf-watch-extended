@@ -1,4 +1,4 @@
-"""Independent decoder for the uncompressed LVGL prototype fonts only."""
+"""Independent bounded decoder for raw and RLE LVGL prototype fonts."""
 import struct
 import sys
 from pathlib import Path
@@ -23,12 +23,41 @@ class Bits:
         return value
 
 
+def bitmap_pixels(bits, width, height, bpp, compression):
+    """Decode native-depth pixels; RLE runs continue across row boundaries."""
+    require(bpp in (2, 4) and compression in (0, 1, 2), 'unsupported bitmap format')
+    require(0 <= width <= 256 and 0 <= height <= 256, 'oversized prototype glyph')
+    count = width * height
+    samples = []
+    previous = None
+    while len(samples) < count:
+        value = bits.read(bpp)
+        samples.append(value)
+        if compression and value == previous:
+            # Equal literals introduce a run: ten unary extension bits,
+            # then an eleventh flag followed by a six-bit extension count.
+            for index in range(11):
+                if bits.read(1) == 0:
+                    break
+                repeats = 1 if index < 10 else bits.read(6)
+                require(len(samples) + repeats <= count, 'RLE run exceeds glyph dimensions')
+                samples.extend([value] * repeats)
+            previous = None  # A completed run resets literal comparison.
+        else:
+            previous = value
+    rows = [samples[y * width:(y + 1) * width] for y in range(height)]
+    if compression == 1:
+        for y in range(1, height):
+            rows[y] = [pixel ^ above for pixel, above in zip(rows[y], rows[y - 1])]
+    return rows
+
+
 def decode(data, text):
     result = audit(data, text)['fonts'][0]
     require(not result['unmapped'], 'prototype has missing characters')
     _, head = table(data, 0)
-    require(head[41] == 0 and head[42] == 0, 'only raw, non-subpixel fonts are supported')
-    require(head[37] == 4 and head[36] in (0, 1), 'unsupported bitmap format')
+    require(head[41] in (0, 1, 2) and head[42] == 0, 'unsupported compression or subpixel format')
+    require(head[37] in (2, 4) and head[36] in (0, 1), 'unsupported bitmap format')
     require(all(0 < head[i] <= 16 for i in (38, 39)) and head[40] <= 16, 'unsupported metric widths')
     records = {}
     offset = len(head)
@@ -41,6 +70,7 @@ def decode(data, text):
     width = 2 if head[34] == 0 else 4
     positions = [number(loca, 12 + i * width, 'H' if width == 2 else 'I') for i in range(count)] + [len(glyf)]
     glyphs = {}
+    pixel_count = 0
     for cp in sorted(set(map(ord, text))):
         glyph_id = result['mapped_glyph_ids'][f'U+{cp:04X}']
         bits = Bits(glyf[positions[glyph_id]:positions[glyph_id + 1]])
@@ -48,8 +78,11 @@ def decode(data, text):
         x, y = bits.read(head[38], True), bits.read(head[38], True)
         w, h = bits.read(head[39]), bits.read(head[39])
         require(w <= 256 and h <= 256, 'oversized prototype glyph')
-        pixels = [[bits.read(4) for _ in range(w)] for _ in range(h)]
-        glyphs[cp] = {'advance': advance / (16 if head[36] else 1), 'x': x, 'y': y, 'width': w, 'height': h, 'pixels': pixels}
+        pixel_count += w * h
+        require(pixel_count <= 4_000_000, 'decoded pixel limit exceeded')
+        pixels = bitmap_pixels(bits, w, h, head[37], head[41])
+        glyphs[cp] = {'advance': advance / (16 if head[36] else 1), 'x': x, 'y': y,
+                      'width': w, 'height': h, 'bpp': head[37], 'pixels': pixels}
     return glyphs
 
 
@@ -69,11 +102,14 @@ def png_preview(glyphs, lines):
         baseline = margin + ascent + row * line_height
         for char in line:
             g = glyphs[ord(char)]
+            require(g['bpp'] in (2, 4), 'unsupported preview depth')
+            max_pixel = (1 << g['bpp']) - 1
             for dy, pixels in enumerate(g['pixels']):
                 for dx, pixel in enumerate(pixels):
                     x, y = round(pen) + g['x'] + dx, baseline - g['y'] - g['height'] + dy
                     require(0 <= x < width and 0 <= y < height, 'glyph outside preview')
-                    canvas[y][x] = max(canvas[y][x], pixel * 17)
+                    require(0 <= pixel <= max_pixel, 'invalid preview pixel')
+                    canvas[y][x] = max(canvas[y][x], pixel * 255 // max_pixel)
             pen += g['advance']
     def chunk(tag, data):
         return struct.pack('>I', len(data)) + tag + data + struct.pack('>I', zlib.crc32(tag + data))

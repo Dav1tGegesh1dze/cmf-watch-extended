@@ -42,6 +42,8 @@ The [acquisition follow-up](research/GEORGIAN_ACQUISITION_FOLLOWUP.md) adds a pi
 
 The [notification-renderer analysis](research/NOTIFICATION_RENDERER.md) is static and offline. Its inferred code addresses apply only to the hashed older dump and are never BLE commands, write targets or firmware patch offsets.
 
+The [compressed-font work](research/COMPRESSED_GEORGIAN_FONTS.md) adds offline asset generation and decoding only. It introduces no font-upload command or BLE behavior.
+
 ## Matching-version stock resource audit
 
 The [1.0.0.73 package audit](research/STOCK_1.0.0.73_AUDIT.md) now verifies a matching-version public resource package, its internal version and partition checksums. Its named `sans32.font` is identical to the older font and lacks Georgian character mappings. This supersedes earlier missing-resource blockers; full glyph-miss tracing, font integration and a supported installation/recovery route remain pending. The audit is offline and read-only; the phone app remains discovery-only and watch rendering is not fixed.

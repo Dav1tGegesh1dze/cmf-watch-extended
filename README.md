@@ -67,6 +67,8 @@ The [latest Georgian rendering investigation](docs/research/GEORGIAN_ACQUISITION
 
 The [static notification-renderer trace](docs/research/NOTIFICATION_RENDERER.md) now ties the older message popup to `sans32.font` and a configured default character. A read-only, hash-bound verifier reproduces selected evidence; installed 1.0.0.73 rendering is still unverified.
 
+Standalone generation now also includes [compressed 2-bpp Georgian fonts](docs/research/COMPRESSED_GEORGIAN_FONTS.md), verified against the converter raster. These are offline assets, not installable replacements for the full watch font.
+
 ## Matching-version stock resource audit
 
 The [1.0.0.73 package audit](docs/research/STOCK_1.0.0.73_AUDIT.md) now verifies a matching-version public resource package, its internal version and partition checksums. Its named `sans32.font` is identical to the older font and lacks Georgian character mappings. This supersedes earlier missing-resource blockers; full glyph-miss tracing, font integration and a supported installation/recovery route remain pending. The audit is offline and read-only; the phone app remains discovery-only and watch rendering is not fixed.
