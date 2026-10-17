@@ -1,0 +1,12 @@
+{
+  "stock_sha256": "f36c502dc0d35be63be0aa5037a5f53d5ca85f44da57efe86859790efa14b01f",
+  "font_sha256": "89865ff6a1dea8463779a026e8aaedf0b661492e1d780fe14fcce0982c37db8b",
+  "output_sha256": "36908595dc832cc40db262d8edcabb27c423eb558ba0e401900df4850fcbbfec",
+  "stock_bytes": 9513344,
+  "output_bytes": 9519872,
+  "added_bytes": 6528,
+  "preserved_other_files": 8,
+  "stock_round_trip_identical": true,
+  "all_observed_word_sums_valid": true,
+  "scope": "Decompressed font resource candidate only. No OTA packaging, transfer or hardware validation."
+}

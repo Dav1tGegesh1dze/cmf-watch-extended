@@ -14,8 +14,16 @@ The locally viewed preview renders Latin alongside `სალამი`, `გა
 
 ## Validation and limits
 
-Nine synthetic tests cover original/new glyph decoding, kerning preservation, sparse cmap relocation, duplicate integration, missing characters, every truncation of a fixture, unsupported formats, metric overflow, vertical overflow and CLI hash rejection without output. Existing bitmap, font audit, firmware audit and older renderer tests are also run. Android and iOS builds/shared tests run through required PR checks. No hardware rendering or notification-forwarding test was run.
+Nine font tests cover original/new glyph decoding, kerning preservation, sparse cmap relocation, duplicate integration, missing characters, every truncation of a fixture, unsupported formats, metric overflow, vertical overflow and CLI hash rejection without output. Existing bitmap, font audit, firmware audit and older renderer tests are also run. Android and iOS builds/shared tests run through required PR checks. No hardware rendering or notification-forwarding test was run.
 
-This finishes the offline font-integration implementation. It does not finish watch support. The extended font cannot simply overwrite the original because it is larger. Before a device experiment, resource-container rebuilding, partition limits, loader assumptions, authenticity checks and a supported installation/recovery route must be established. Firmware packaging/uploading and notification transport are not implemented here. The phone app remains discovery-only and official-app pairing is unchanged.
+Five additional synthetic tests cover resource round trips, relocation, preservation, malformed containers and replacement rejection. The local SDFS builder exactly reproduces the unchanged stock input before replacing the font.
+
+This finishes the offline font/resource-integration implementation. It does not finish watch support. The extended font cannot simply overwrite the original because it is larger. Before a device experiment, partition limits, loader assumptions, authenticity checks and a supported installation/recovery route must be established. OTA packaging/uploading and notification transport are not implemented here. The phone app remains discovery-only and official-app pairing is unchanged.
 
 No vendor binary assets are redistributed. The donor's OFL and the converter/specification's MIT licenses have been reviewed; they provide no grant over proprietary base assets. Distribution of a derivative remains out of scope pending vendor licensing review. Flashing and unpairing still require separate explicit approval and documented hardware verification.
+
+## Decompressed resource container
+
+The local builder preserves all eight other files exactly, retains 64-byte alignment and zero padding, and updates the named font’s size/word sum, later offsets, container length, directory word sum and data-region word sum. Header offsets 24 and 28 match sums of complete little-endian words over the directory (bytes 32–319) and data (bytes 320–end), respectively. These observed checks are not cryptographic signatures. The unchanged stock rebuild is byte-identical, including padding.
+
+The candidate grows from 9,513,344 to 9,519,872 bytes (+6,528 including alignment), SHA-256 `36908595dc832cc40db262d8edcabb27c423eb558ba0e401900df4850fcbbfec`. [Resource metadata](GEORGIAN_RESOURCE_INTEGRATION.json) is committed; the proprietary derivative remains ignored locally. No compressed OTA, manifest-version alteration or update transmission is produced. Device partition capacity and acceptance remain unverified.
