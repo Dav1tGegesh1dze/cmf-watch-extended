@@ -22,3 +22,7 @@ The [compressed font implementation](research/COMPRESSED_GEORGIAN_FONTS.md) clos
 ## Matching-version stock resource audit
 
 The [1.0.0.73 package audit](research/STOCK_1.0.0.73_AUDIT.md) now verifies a matching-version public resource package, its internal version and partition checksums. Its named `sans32.font` is identical to the older font and lacks Georgian character mappings. This supersedes earlier missing-resource blockers; full glyph-miss tracing, font integration and a supported installation/recovery route remain pending. The audit is offline and read-only; the phone app remains discovery-only and watch rendering is not fixed.
+
+## Offline Georgian font integration
+
+The [local integration candidate](research/GEORGIAN_FONT_INTEGRATION.md) now adds 66 modern Georgian letters to the audited stock font while preserving its existing glyphs, character mappings and kerning. All added pixels/metrics match the licensed prototype; the font grows by 6,492 bytes. This completes the offline font merger, not watch installation: container integration, loader/partition limits and a supported installation/recovery route remain unresolved. No watch upload or flashing was performed.
