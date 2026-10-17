@@ -1,0 +1,20 @@
+{
+  "base_sha256": "416fe976f3c9fa7e758ac156e4de27d82c01361d772a9a4ee88f36a91fc11e7e",
+  "donor_sha256": "101a4038f12828f280a0c46fccc70c5250d0bf2c384dde94acd85aafa96942f6",
+  "output_sha256": "89865ff6a1dea8463779a026e8aaedf0b661492e1d780fe14fcce0982c37db8b",
+  "base_bytes": 5320508,
+  "output_bytes": 5327000,
+  "added_bytes": 6492,
+  "preserved_glyphs": 36021,
+  "preserved_mappings": 36033,
+  "added_glyphs": 66,
+  "preserved_header": true,
+  "preserved_kerning": true,
+  "preserved_original_glyph_bytes": true,
+  "new_glyph_pixels_and_metrics_match": true,
+  "ranges": [
+    "U+10D0\u2013U+10F0",
+    "U+1C90\u2013U+1CB0"
+  ],
+  "scope": "Offline font candidate only; not a flashable package or hardware-verified fix."
+}

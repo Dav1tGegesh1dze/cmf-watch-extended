@@ -48,3 +48,7 @@ The [older-image renderer trace](research/NOTIFICATION_RENDERER.md) now identifi
 ## Matching-version stock resource audit
 
 The [1.0.0.73 package audit](research/STOCK_1.0.0.73_AUDIT.md) now verifies a matching-version public resource package, its internal version and partition checksums. Its named `sans32.font` is identical to the older font and lacks Georgian character mappings. This supersedes earlier missing-resource blockers; full glyph-miss tracing, font integration and a supported installation/recovery route remain pending. The audit is offline and read-only; the phone app remains discovery-only and watch rendering is not fixed.
+
+## Offline Georgian font integration
+
+The [local integration candidate](research/GEORGIAN_FONT_INTEGRATION.md) now adds 66 modern Georgian letters to the audited stock font while preserving its existing glyphs, character mappings and kerning. All added pixels/metrics match the licensed prototype; the font grows by 6,492 bytes. The offline resource builder also preserves the other eight files and passes a byte-identical stock round trip. Watch installation remains unresolved: loader/partition limits, OTA packaging and a supported installation/recovery route still need verification. No watch upload or flashing was performed.
